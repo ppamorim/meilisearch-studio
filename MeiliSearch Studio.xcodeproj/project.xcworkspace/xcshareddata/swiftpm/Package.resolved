@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "meilisearch-swift",
+        "repositoryURL": "https://github.com/meilisearch/meilisearch-swift.git",
+        "state": {
+          "branch": "master",
+          "revision": "47402cd72b394c6d62beac1bced27ce5da44135b",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}

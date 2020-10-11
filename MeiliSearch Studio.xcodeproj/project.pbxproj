@@ -1,0 +1,374 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		48AE16BA2533A361009E5EB1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AE16B92533A361009E5EB1 /* AppDelegate.swift */; };
+		48AE16BC2533A361009E5EB1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AE16BB2533A361009E5EB1 /* ViewController.swift */; };
+		48AE16BE2533A362009E5EB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48AE16BD2533A362009E5EB1 /* Assets.xcassets */; };
+		48AE16C12533A362009E5EB1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48AE16BF2533A362009E5EB1 /* Main.storyboard */; };
+		48AE16CC2533A5CE009E5EB1 /* MeiliSearch in Frameworks */ = {isa = PBXBuildFile; productRef = 48AE16CB2533A5CE009E5EB1 /* MeiliSearch */; };
+		48AE16CF2533AAB1009E5EB1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AE16CE2533AAB1009E5EB1 /* HomeViewController.swift */; };
+		48AE16D22533AC09009E5EB1 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AE16D12533AC09009E5EB1 /* MenuViewController.swift */; };
+		48AE16D52533B247009E5EB1 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AE16D42533B247009E5EB1 /* PageViewController.swift */; };
+		48AE16D82533B2F3009E5EB1 /* IndexesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AE16D72533B2F3009E5EB1 /* IndexesViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		48AE16B62533A361009E5EB1 /* MeiliSearch Studio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MeiliSearch Studio.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		48AE16B92533A361009E5EB1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		48AE16BB2533A361009E5EB1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		48AE16BD2533A362009E5EB1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		48AE16C02533A362009E5EB1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		48AE16C22533A362009E5EB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		48AE16C32533A362009E5EB1 /* MeiliSearch_Studio.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MeiliSearch_Studio.entitlements; sourceTree = "<group>"; };
+		48AE16CE2533AAB1009E5EB1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		48AE16D12533AC09009E5EB1 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		48AE16D42533B247009E5EB1 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		48AE16D72533B2F3009E5EB1 /* IndexesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexesViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		48AE16B32533A361009E5EB1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				48AE16CC2533A5CE009E5EB1 /* MeiliSearch in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		48AE16AD2533A361009E5EB1 = {
+			isa = PBXGroup;
+			children = (
+				48AE16B82533A361009E5EB1 /* MeiliSearch Studio */,
+				48AE16B72533A361009E5EB1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		48AE16B72533A361009E5EB1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				48AE16B62533A361009E5EB1 /* MeiliSearch Studio.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		48AE16B82533A361009E5EB1 /* MeiliSearch Studio */ = {
+			isa = PBXGroup;
+			children = (
+				48AE16B92533A361009E5EB1 /* AppDelegate.swift */,
+				48AE16BB2533A361009E5EB1 /* ViewController.swift */,
+				48AE16BD2533A362009E5EB1 /* Assets.xcassets */,
+				48AE16BF2533A362009E5EB1 /* Main.storyboard */,
+				48AE16C22533A362009E5EB1 /* Info.plist */,
+				48AE16C32533A362009E5EB1 /* MeiliSearch_Studio.entitlements */,
+				48AE16CE2533AAB1009E5EB1 /* HomeViewController.swift */,
+				48AE16D12533AC09009E5EB1 /* MenuViewController.swift */,
+				48AE16D42533B247009E5EB1 /* PageViewController.swift */,
+				48AE16D72533B2F3009E5EB1 /* IndexesViewController.swift */,
+			);
+			path = "MeiliSearch Studio";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		48AE16B52533A361009E5EB1 /* MeiliSearch Studio */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 48AE16C62533A362009E5EB1 /* Build configuration list for PBXNativeTarget "MeiliSearch Studio" */;
+			buildPhases = (
+				48AE16B22533A361009E5EB1 /* Sources */,
+				48AE16B32533A361009E5EB1 /* Frameworks */,
+				48AE16B42533A361009E5EB1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "MeiliSearch Studio";
+			packageProductDependencies = (
+				48AE16CB2533A5CE009E5EB1 /* MeiliSearch */,
+			);
+			productName = "MeiliSearch Studio";
+			productReference = 48AE16B62533A361009E5EB1 /* MeiliSearch Studio.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		48AE16AE2533A361009E5EB1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1200;
+				LastUpgradeCheck = 1200;
+				TargetAttributes = {
+					48AE16B52533A361009E5EB1 = {
+						CreatedOnToolsVersion = 12.0.1;
+					};
+				};
+			};
+			buildConfigurationList = 48AE16B12533A361009E5EB1 /* Build configuration list for PBXProject "MeiliSearch Studio" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 48AE16AD2533A361009E5EB1;
+			packageReferences = (
+				48AE16CA2533A5CE009E5EB1 /* XCRemoteSwiftPackageReference "meilisearch-swift" */,
+			);
+			productRefGroup = 48AE16B72533A361009E5EB1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				48AE16B52533A361009E5EB1 /* MeiliSearch Studio */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		48AE16B42533A361009E5EB1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				48AE16BE2533A362009E5EB1 /* Assets.xcassets in Resources */,
+				48AE16C12533A362009E5EB1 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		48AE16B22533A361009E5EB1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				48AE16BC2533A361009E5EB1 /* ViewController.swift in Sources */,
+				48AE16D52533B247009E5EB1 /* PageViewController.swift in Sources */,
+				48AE16BA2533A361009E5EB1 /* AppDelegate.swift in Sources */,
+				48AE16D82533B2F3009E5EB1 /* IndexesViewController.swift in Sources */,
+				48AE16CF2533AAB1009E5EB1 /* HomeViewController.swift in Sources */,
+				48AE16D22533AC09009E5EB1 /* MenuViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		48AE16BF2533A362009E5EB1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				48AE16C02533A362009E5EB1 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		48AE16C42533A362009E5EB1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		48AE16C52533A362009E5EB1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		48AE16C72533A362009E5EB1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "MeiliSearch Studio/MeiliSearch_Studio.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "MeiliSearch Studio/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.meilisearch.MeiliSearch-Studio";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		48AE16C82533A362009E5EB1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "MeiliSearch Studio/MeiliSearch_Studio.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "MeiliSearch Studio/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.meilisearch.MeiliSearch-Studio";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		48AE16B12533A361009E5EB1 /* Build configuration list for PBXProject "MeiliSearch Studio" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				48AE16C42533A362009E5EB1 /* Debug */,
+				48AE16C52533A362009E5EB1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		48AE16C62533A362009E5EB1 /* Build configuration list for PBXNativeTarget "MeiliSearch Studio" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				48AE16C72533A362009E5EB1 /* Debug */,
+				48AE16C82533A362009E5EB1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		48AE16CA2533A5CE009E5EB1 /* XCRemoteSwiftPackageReference "meilisearch-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/meilisearch/meilisearch-swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		48AE16CB2533A5CE009E5EB1 /* MeiliSearch */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 48AE16CA2533A5CE009E5EB1 /* XCRemoteSwiftPackageReference "meilisearch-swift" */;
+			productName = MeiliSearch;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 48AE16AE2533A361009E5EB1 /* Project object */;
+}
