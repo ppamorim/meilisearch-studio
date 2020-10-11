@@ -11,7 +11,7 @@ final class PageViewController: NSViewController {
 
   private weak var homeViewControllerDelegate: HomeViewControllerDelegate?
 
-  private var viewController: IndexesViewController?
+  private var viewController: NSViewController?
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -19,8 +19,7 @@ final class PageViewController: NSViewController {
     homeViewControllerDelegate?.pageViewController = self
   }
 
-  func openPage(position: Int) {
-    print("openPage \(position)")
+  func openPage(page: Page) {
 
     if let viewController = self.viewController {
       viewController.view.removeFromSuperview()
@@ -28,17 +27,38 @@ final class PageViewController: NSViewController {
     }
 
     let storyboard = NSStoryboard(name: "Main", bundle: nil)
-    let identifier = NSStoryboard.SceneIdentifier("IndexesViewController")
-    viewController = storyboard.instantiateController(identifier: identifier, creator: { coder in IndexesViewController(coder: coder) }) as! IndexesViewController
+    let identifier = NSStoryboard.SceneIdentifier(page.viewControllerName)
+    viewController = storyboard.instantiateController(identifier: identifier, creator: { coder in IndexesViewController(coder: coder) })
 
-    guard let viewController: IndexesViewController = self.viewController else {
+    guard let viewController: NSViewController = self.viewController else {
       return
     }
 
     self.addChild(viewController)
     viewController.view.frame = self.view.frame
     self.view.addSubview(viewController.view)
+    self.view.needsUpdateConstraints = true
+    self.updateViewConstraints()
 
+  }
+
+  override func updateViewConstraints() {
+    super.updateViewConstraints()
+    guard let viewController = self.viewController else {
+      return
+    }
+    let edges: [NSLayoutConstraint.Attribute] = [.top, .bottom, .leading, .trailing]
+    for edge in edges {
+      self.view.addConstraint(
+        NSLayoutConstraint(
+          item: viewController.view,
+          attribute: edge,
+          relatedBy: .equal,
+          toItem: self.view,
+          attribute: edge,
+          multiplier: 1.0,
+          constant: 0))
+    }
   }
 
 }

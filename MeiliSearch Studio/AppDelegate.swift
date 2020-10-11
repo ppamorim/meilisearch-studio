@@ -10,8 +10,7 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
-  
-
+  private weak var windowController: NSWindowController?
 
   func applicationDidFinishLaunching(_ aNotification: Notification) {
     // Insert code here to initialize your application
@@ -21,6 +20,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     // Insert code here to tear down your application
   }
 
+  func present(windowController: NSWindowController) {
+    self.windowController = windowController
+    self.windowController?.window?.makeKeyAndOrderFront(nil)
+    self.windowController?.showWindow(self)
+  }
 
 }
 

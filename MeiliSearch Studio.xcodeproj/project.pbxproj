@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		48AE16BA2533A361009E5EB1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AE16B92533A361009E5EB1 /* AppDelegate.swift */; };
-		48AE16BC2533A361009E5EB1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AE16BB2533A361009E5EB1 /* ViewController.swift */; };
+		48AE16BC2533A361009E5EB1 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AE16BB2533A361009E5EB1 /* AuthViewController.swift */; };
 		48AE16BE2533A362009E5EB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48AE16BD2533A362009E5EB1 /* Assets.xcassets */; };
 		48AE16C12533A362009E5EB1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48AE16BF2533A362009E5EB1 /* Main.storyboard */; };
 		48AE16CC2533A5CE009E5EB1 /* MeiliSearch in Frameworks */ = {isa = PBXBuildFile; productRef = 48AE16CB2533A5CE009E5EB1 /* MeiliSearch */; };
@@ -16,12 +16,13 @@
 		48AE16D22533AC09009E5EB1 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AE16D12533AC09009E5EB1 /* MenuViewController.swift */; };
 		48AE16D52533B247009E5EB1 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AE16D42533B247009E5EB1 /* PageViewController.swift */; };
 		48AE16D82533B2F3009E5EB1 /* IndexesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AE16D72533B2F3009E5EB1 /* IndexesViewController.swift */; };
+		48AE16DC2533C69D009E5EB1 /* MeiliSearchClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AE16DB2533C69D009E5EB1 /* MeiliSearchClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		48AE16B62533A361009E5EB1 /* MeiliSearch Studio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MeiliSearch Studio.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		48AE16B92533A361009E5EB1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		48AE16BB2533A361009E5EB1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		48AE16BB2533A361009E5EB1 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		48AE16BD2533A362009E5EB1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		48AE16C02533A362009E5EB1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		48AE16C22533A362009E5EB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -30,6 +31,7 @@
 		48AE16D12533AC09009E5EB1 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		48AE16D42533B247009E5EB1 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		48AE16D72533B2F3009E5EB1 /* IndexesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexesViewController.swift; sourceTree = "<group>"; };
+		48AE16DB2533C69D009E5EB1 /* MeiliSearchClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeiliSearchClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,7 +66,7 @@
 			isa = PBXGroup;
 			children = (
 				48AE16B92533A361009E5EB1 /* AppDelegate.swift */,
-				48AE16BB2533A361009E5EB1 /* ViewController.swift */,
+				48AE16BB2533A361009E5EB1 /* AuthViewController.swift */,
 				48AE16BD2533A362009E5EB1 /* Assets.xcassets */,
 				48AE16BF2533A362009E5EB1 /* Main.storyboard */,
 				48AE16C22533A362009E5EB1 /* Info.plist */,
@@ -73,6 +75,7 @@
 				48AE16D12533AC09009E5EB1 /* MenuViewController.swift */,
 				48AE16D42533B247009E5EB1 /* PageViewController.swift */,
 				48AE16D72533B2F3009E5EB1 /* IndexesViewController.swift */,
+				48AE16DB2533C69D009E5EB1 /* MeiliSearchClient.swift */,
 			);
 			path = "MeiliSearch Studio";
 			sourceTree = "<group>";
@@ -152,11 +155,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48AE16BC2533A361009E5EB1 /* ViewController.swift in Sources */,
+				48AE16BC2533A361009E5EB1 /* AuthViewController.swift in Sources */,
 				48AE16D52533B247009E5EB1 /* PageViewController.swift in Sources */,
 				48AE16BA2533A361009E5EB1 /* AppDelegate.swift in Sources */,
 				48AE16D82533B2F3009E5EB1 /* IndexesViewController.swift in Sources */,
 				48AE16CF2533AAB1009E5EB1 /* HomeViewController.swift in Sources */,
+				48AE16DC2533C69D009E5EB1 /* MeiliSearchClient.swift in Sources */,
 				48AE16D22533AC09009E5EB1 /* MenuViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

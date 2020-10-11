@@ -9,15 +9,15 @@ import Cocoa
 
 protocol HomeViewControllerDelegate: AnyObject {
   var pageViewController: PageViewController? { get set }
-  func openPage(position: Int)
+  func openPage(page: Page)
 }
 
 final class HomeViewController: NSSplitViewController, HomeViewControllerDelegate {
 
   var pageViewController: PageViewController?
 
-  func openPage(position: Int) {
-    pageViewController?.openPage(position: position)
+  func openPage(page: Page) {
+    pageViewController?.openPage(page: page)
   }
 
 }

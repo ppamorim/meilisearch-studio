@@ -7,15 +7,20 @@
 
 import Cocoa
 
+struct Page {
+  let title: String
+  let viewControllerName: String
+}
+
 final class MenuViewController: NSViewController {
 
   private weak var homeViewControllerDelegate: HomeViewControllerDelegate?
 
-  fileprivate let items: [String] = [
-    "Indexes",
-    "Documents",
-    "Search",
-    "Settings"
+  fileprivate let items: [Page] = [
+    Page(title: "Indexes", viewControllerName: String(describing: IndexesViewController.self)),
+    Page(title: "Documents", viewControllerName: String(describing: IndexesViewController.self)),
+    Page(title: "Search", viewControllerName: String(describing: IndexesViewController.self)),
+    Page(title: "Settings", viewControllerName: String(describing: IndexesViewController.self))
   ]
 
   @IBOutlet weak var tableView: NSTableView!
@@ -31,7 +36,7 @@ final class MenuViewController: NSViewController {
 
   @objc
   private func tableViewClick(_ sender:AnyObject) {
-    homeViewControllerDelegate?.openPage(position: tableView.selectedRow)
+    homeViewControllerDelegate?.openPage(page: items[tableView.selectedRow])
   }
 
 }
@@ -40,7 +45,7 @@ extension MenuViewController: NSTableViewDelegate {
 
   func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
     if let cell = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "Item"), owner: nil) as? NSTableCellView {
-      cell.textField?.stringValue = items[row]
+      cell.textField?.stringValue = items[row].title
       return cell
     }
     return nil
