@@ -28,7 +28,8 @@ final class PageViewController: NSViewController {
 
     let storyboard = NSStoryboard(name: "Main", bundle: nil)
     let identifier = NSStoryboard.SceneIdentifier(page.viewControllerName)
-    viewController = storyboard.instantiateController(identifier: identifier, creator: { coder in IndexesViewController(coder: coder) })
+    viewController = storyboard.instantiateController(withIdentifier: identifier) as? NSViewController
+//    viewController = storyboard.instantiateController(identifier: identifier, creator: { coder in IndexesViewController(coder: coder) })
 
     guard let viewController: NSViewController = self.viewController else {
       return

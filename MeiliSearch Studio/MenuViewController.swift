@@ -18,7 +18,7 @@ final class MenuViewController: NSViewController {
 
   fileprivate let items: [Page] = [
     Page(title: "Indexes", viewControllerName: String(describing: IndexesViewController.self)),
-    Page(title: "Documents", viewControllerName: String(describing: IndexesViewController.self)),
+    Page(title: "Documents", viewControllerName: String(describing: DocumentsViewController.self)),
     Page(title: "Search", viewControllerName: String(describing: IndexesViewController.self)),
     Page(title: "Settings", viewControllerName: String(describing: IndexesViewController.self))
   ]
