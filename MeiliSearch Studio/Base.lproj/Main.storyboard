@@ -1373,7 +1373,7 @@
         <scene sceneID="oLh-lE-92v">
             <objects>
                 <windowController storyboardIdentifier="AddIndexWindowController" id="baE-Ae-bhj" sceneMemberID="viewController">
-                    <window key="window" title="Create a Index" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="DMb-dL-Gwz">
+                    <window key="window" title="Create an Index" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="DMb-dL-Gwz">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
                         <rect key="contentRect" x="294" y="362" width="300" height="120"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1177"/>
