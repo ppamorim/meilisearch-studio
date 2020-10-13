@@ -10,7 +10,10 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
-  private weak var windowController: NSWindowController?
+  private var windowControllers: [Weak<NSWindowController>] = []
+
+  //Not nice
+  var addIndexViewControllerDelegate: AddIndexViewControllerDelegate?
 
   func applicationDidFinishLaunching(_ aNotification: Notification) {
     // Insert code here to initialize your application
@@ -18,13 +21,20 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
   func applicationWillTerminate(_ aNotification: Notification) {
     // Insert code here to tear down your application
+    addIndexViewControllerDelegate = nil
   }
 
   func present(windowController: NSWindowController) {
-    self.windowController = windowController
-    self.windowController?.window?.makeKeyAndOrderFront(nil)
-    self.windowController?.showWindow(self)
+    self.windowControllers.append(Weak(value: windowController))
+    windowController.window?.makeKeyAndOrderFront(nil)
+    windowController.showWindow(self)
   }
 
 }
 
+final class Weak<T: AnyObject> {
+  weak var value : T?
+  init (value: T) {
+    self.value = value
+  }
+}

@@ -11,10 +11,12 @@ final class AuthViewController: NSViewController {
 
   @IBOutlet weak var hostTextField: NSTextField!
   @IBOutlet weak var masterKeyTextField: NSSecureTextField!
+  @IBOutlet weak var meiliLinkLabel: NSTextField!
 
   override func viewDidLoad() {
     super.viewDidLoad()
     masterKeyTextField.stringValue = "masterKey"
+    meiliLinkLabel.addGestureRecognizer(NSClickGestureRecognizer(target: self, action: #selector(onMeiliLinkClick)))
     // Do any additional setup after loading the view.
   }
 
@@ -22,6 +24,11 @@ final class AuthViewController: NSViewController {
     didSet {
     // Update the view, if already loaded.
     }
+  }
+
+  @objc
+  private func onMeiliLinkClick() {
+    NSWorkspace.shared.open(URL(string: "https://www.meilisearch.com")!)
   }
 
   @IBAction func onSignInClick(_ sender: Any) {

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		488322C62534FFB90086A902 /* AddIndexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488322C52534FFB90086A902 /* AddIndexViewController.swift */; };
 		48AE16BA2533A361009E5EB1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AE16B92533A361009E5EB1 /* AppDelegate.swift */; };
 		48AE16BC2533A361009E5EB1 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AE16BB2533A361009E5EB1 /* AuthViewController.swift */; };
 		48AE16BE2533A362009E5EB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48AE16BD2533A362009E5EB1 /* Assets.xcassets */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		488322C52534FFB90086A902 /* AddIndexViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddIndexViewController.swift; sourceTree = "<group>"; };
 		48AE16B62533A361009E5EB1 /* MeiliSearch Studio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MeiliSearch Studio.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		48AE16B92533A361009E5EB1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48AE16BB2533A361009E5EB1 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 				48AE16D72533B2F3009E5EB1 /* IndexesViewController.swift */,
 				48AE16DB2533C69D009E5EB1 /* MeiliSearchClient.swift */,
 				48AE16E02533CFD8009E5EB1 /* DocumentsViewController.swift */,
+				488322C52534FFB90086A902 /* AddIndexViewController.swift */,
 			);
 			path = "MeiliSearch Studio";
 			sourceTree = "<group>";
@@ -164,6 +167,7 @@
 				48AE16BA2533A361009E5EB1 /* AppDelegate.swift in Sources */,
 				48AE16D82533B2F3009E5EB1 /* IndexesViewController.swift in Sources */,
 				48AE16CF2533AAB1009E5EB1 /* HomeViewController.swift in Sources */,
+				488322C62534FFB90086A902 /* AddIndexViewController.swift in Sources */,
 				48AE16DC2533C69D009E5EB1 /* MeiliSearchClient.swift in Sources */,
 				48AE16D22533AC09009E5EB1 /* MenuViewController.swift in Sources */,
 			);

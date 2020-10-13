@@ -36,7 +36,6 @@ final class PageViewController: NSViewController {
     }
 
     self.addChild(viewController)
-    viewController.view.frame = self.view.frame
     self.view.addSubview(viewController.view)
     self.view.needsUpdateConstraints = true
     self.updateViewConstraints()
@@ -58,7 +57,7 @@ final class PageViewController: NSViewController {
           toItem: self.view,
           attribute: edge,
           multiplier: 1.0,
-          constant: 0))
+          constant: edge == .top ? 20.0 : 0.0))
     }
   }
 
