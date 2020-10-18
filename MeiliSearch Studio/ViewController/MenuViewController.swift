@@ -20,8 +20,8 @@ final class MenuViewController: NSViewController {
   fileprivate let items: [Page] = [
     Page(title: "Indexes", icon: "staroflife", viewControllerName: String(describing: IndexesViewController.self)),
     Page(title: "Documents", icon: "doc.text.magnifyingglass", viewControllerName: String(describing: DocumentsViewController.self)),
-    Page(title: "Search", icon: "", viewControllerName: String(describing: IndexesViewController.self)),
-    Page(title: "Settings", icon: "", viewControllerName: String(describing: IndexesViewController.self))
+    Page(title: "Search", icon: "", viewControllerName: String(describing: SearchViewController.self)),
+    Page(title: "Settings", icon: "", viewControllerName: String(describing: SettingsViewController.self))
   ]
 
   @IBOutlet weak var tableView: NSTableView!

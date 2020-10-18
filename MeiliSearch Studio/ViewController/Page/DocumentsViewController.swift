@@ -13,6 +13,8 @@ final class DocumentsViewController: NSViewController {
   private var indexes: [Index] = []
   private var rawDocuments: [RawDocument] = []
 
+  private weak var windowController: NSWindowController?
+
   @IBOutlet weak var backgroundView: NSView!
   @IBOutlet weak var scrollView: NSScrollView!
   @IBOutlet weak var tableView: NSTableView!
@@ -76,6 +78,16 @@ final class DocumentsViewController: NSViewController {
 
   private func openJSONLoader(_ index: Index) {
 
+    let appDelegate = NSApplication.shared.delegate as! AppDelegate
+//    appDelegate.addIndexViewControllerDelegate = self
+
+    let storyboard = NSStoryboard(name: "Main", bundle: Bundle.main)
+    let windowController = storyboard.instantiateController(
+      withIdentifier: NSStoryboard.SceneIdentifier("JSONEditorWindowController")) as! NSWindowController
+    self.windowController = windowController
+    windowController.window?.makeKeyAndOrderFront(nil)
+    windowController.showWindow(self)
+
   }
 
   @IBAction func onReloadClick(_ sender: Any?) {
@@ -119,10 +131,6 @@ final class DocumentsViewController: NSViewController {
 
     }
 
-  }
-
-  struct RawDocument: Codable, Equatable {
-    let title: String?
   }
 
   private func loadDocumentsAsync(UID: String, limit: Int) {
@@ -191,6 +199,7 @@ final class DocumentsViewController: NSViewController {
 
   private func updateComboBoxIfNeeded() {
     self.indexesComboBox.reloadData()
+    self.indexesComboBox.selectItem(at: 0)
     self.progressIndicator.stopAnimation(nil)
     self.progressIndicator.isHidden = true
   }
@@ -199,45 +208,57 @@ final class DocumentsViewController: NSViewController {
     self.tableView.reloadData()
     self.progressIndicator.isHidden = true
     self.reloadButton.isEnabled = true
+
+    tableView.tableColumns.forEach { tableColumn in
+      tableView.removeTableColumn(tableColumn)
+    }
+
+    if rawDocuments.isEmpty {
+      return
+    }
+
+    let rawDocument = rawDocuments[0]
+
+    let values: [String: Any] = rawDocument.value as! [String: Any]
+    let sortedKeys = Array(values.keys).sorted(by: <)
+
+    sortedKeys.forEach { (key: String) in
+      let tableColumn: NSTableColumn = NSTableColumn(identifier: NSUserInterfaceItemIdentifier(key))
+      tableColumn.isEditable = false
+      tableColumn.headerCell.stringValue = key
+      (tableColumn.dataCell as! NSTextFieldCell).identifier = tableColumn.identifier
+      tableView.addTableColumn(tableColumn)
+    }
+
   }
 
 }
 
 extension DocumentsViewController: NSTableViewDelegate {
 
-  fileprivate enum CellIdentifiers {
-      static let IndexNameCell = "DocumentTitle"
-      static let IndexCreatedAtCell = "IndexCreatedAt"
-      static let IndexUpdatedAtCell = "IndexUpdatedAt"
-    }
-
   func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
 
-    var text: String = ""
-    var cellIdentifier: String = ""
+    let index: [String: Any] = rawDocuments[row].value as! [String: Any]
 
-    let dateFormatter = DateFormatter()
-    dateFormatter.dateStyle = .long
-    dateFormatter.timeStyle = .long
+    let dd = tableColumn!.headerCell.stringValue
+    let v = index[dd]
 
-    let index = rawDocuments[row]
+    let cell = NSTextField()
+    cell.identifier = NSUserInterfaceItemIdentifier(dd)
 
-    if tableColumn == tableView.tableColumns[0] {
-      text = index.title ?? "empty"
-      cellIdentifier = CellIdentifiers.IndexNameCell
-    } else if tableColumn == tableView.tableColumns[1] {
-      text = index.title ?? "empty"
-      cellIdentifier = CellIdentifiers.IndexCreatedAtCell
-    } else if tableColumn == tableView.tableColumns[2] {
-      text = index.title ?? "empty"
-      cellIdentifier = CellIdentifiers.IndexUpdatedAtCell
+    if let intValue = v as? Int {
+      cell.intValue = Int32(intValue)
+    } else if let floatValue = v as? Float {
+      cell.floatValue = floatValue
+    } else if let stringValue = v as? String {
+      cell.stringValue = stringValue
+    } else if let vv = v {
+      cell.stringValue = "\(vv)"
+    } else {
+      cell.stringValue = "\"null\""
     }
 
-    if let cell = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: cellIdentifier), owner: nil) as? NSTableCellView {
-      cell.textField?.stringValue = text
-      return cell
-    }
-    return nil
+    return cell
   }
 
 }
@@ -256,8 +277,6 @@ extension DocumentsViewController: NSComboBoxDelegate {
     let index: Int = indexesComboBox.indexOfSelectedItem
     loadDocumentsAsync(UID: indexes[index].UID, limit: 10)
   }
-
-
 
 }
 

@@ -11,12 +11,14 @@ import MeiliSearch
 final class IndexesViewController: NSViewController {
 
   private var indexes: [Index] = []
+  private var originalIndexes: [Index] = []
   private weak var windowController: NSWindowController?
 
   @IBOutlet weak var backgroundView: NSView!
   @IBOutlet weak var statusBarView: NSView!
   @IBOutlet weak var scrollView: NSScrollView!
   @IBOutlet weak var tableView: NSTableView!
+  @IBOutlet weak var searchField: NSSearchField!
 
   @IBOutlet weak var modifyButton: NSButton!
   @IBOutlet weak var deleteButton: NSButton!
@@ -40,6 +42,7 @@ final class IndexesViewController: NSViewController {
     super.viewDidLoad()
     backgroundView.wantsLayer = true
     backgroundView.layer?.backgroundColor = NSColor.windowBackgroundColor.cgColor
+    searchField.delegate = self
     tableView.delegate = self
     tableView.dataSource = self
     tableView.target = self
@@ -108,6 +111,7 @@ final class IndexesViewController: NSViewController {
         switch result {
         case .success(let indexes):
 
+          self?.originalIndexes = indexes
           self?.indexes = indexes
 
           DispatchQueue.main.async { [weak self] in
@@ -163,7 +167,7 @@ final class IndexesViewController: NSViewController {
 
   }
 
-  func dialogCustomCancel(question: String, text: String, firstButtonText: String) -> Bool {
+  private func dialogCustomCancel(question: String, text: String, firstButtonText: String) -> Bool {
     let alert = NSAlert()
     alert.messageText = question
     alert.informativeText = text
@@ -173,6 +177,16 @@ final class IndexesViewController: NSViewController {
     return alert.runModal() == .alertFirstButtonReturn
   }
   
+}
+
+extension IndexesViewController: NSSearchFieldDelegate {
+
+  func controlTextDidChange(_ obj: Notification) {
+    let UID: String = searchField.stringValue.trimmingCharacters(in: .whitespacesAndNewlines)
+    self.indexes = originalIndexes.filter { (index: Index) in index.UID.contains(UID) }
+    self.updateTableViewIfNeeded()
+  }
+
 }
 
 extension IndexesViewController: NSTableViewDelegate {

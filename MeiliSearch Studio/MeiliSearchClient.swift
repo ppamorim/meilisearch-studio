@@ -17,7 +17,7 @@ class MeiliSearchClient {
   private init() { }
 
   func setup(hostURL: String, key: String, _ completion: @escaping (Result<(), Swift.Error>) -> Void) {
-    let queue = DispatchQueue(label: "MeiliSearchClientDispatchQueue")
+    let queue = DispatchQueue(label: "MeiliSearchClientDispatchQueue", qos: .userInitiated)
     queue.async { [weak self] in
       do {
         let host: String = hostURL.isEmpty ? "http://localhost:7700" : hostURL

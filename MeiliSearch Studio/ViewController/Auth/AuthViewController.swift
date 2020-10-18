@@ -12,18 +12,11 @@ final class AuthViewController: NSViewController {
   @IBOutlet weak var hostTextField: NSTextField!
   @IBOutlet weak var masterKeyTextField: NSSecureTextField!
   @IBOutlet weak var meiliLinkLabel: NSTextField!
+  @IBOutlet weak var activityIndicator: NSProgressIndicator!
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    masterKeyTextField.stringValue = "masterKey"
     meiliLinkLabel.addGestureRecognizer(NSClickGestureRecognizer(target: self, action: #selector(onMeiliLinkClick)))
-    // Do any additional setup after loading the view.
-  }
-
-  override var representedObject: Any? {
-    didSet {
-    // Update the view, if already loaded.
-    }
   }
 
   @objc
@@ -36,22 +29,39 @@ final class AuthViewController: NSViewController {
     let host: String = hostTextField.stringValue
     let masterKey: String = masterKeyTextField.stringValue
 
-    if masterKey.isEmpty {
-      return
-    }
+    self.toggleActivityIndicator(enabled: true)
 
-    MeiliSearchClient.shared.setup(hostURL: host, key: masterKey) { [weak self] result in
-      switch result {
-      case .success:
-        self?.showHomeViewController()
-      case .failure(let error):
-        let alert = NSAlert()
-        alert.messageText = "Failed to connect to a MeiliSearch instance"
-        alert.runModal()
+    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+
+      MeiliSearchClient.shared.setup(hostURL: host, key: masterKey) { [weak self] result in
+
+        self?.toggleActivityIndicator(enabled: false)
+
+        switch result {
+        case .success:
+          self?.showHomeViewController()
+
+        case .failure(let error):
+          let alert = NSAlert()
+          alert.messageText = "Failed to connect to a MeiliSearch instance"
+          alert.runModal()
+
+        }
+
       }
 
     }
 
+  }
+
+  private func toggleActivityIndicator(enabled: Bool) {
+    if enabled {
+      self.activityIndicator.startAnimation(nil)
+      self.activityIndicator.isHidden = false
+      return
+    }
+    self.activityIndicator.isHidden = true
+    self.activityIndicator.stopAnimation(nil)
   }
 
   private func showHomeViewController() {
