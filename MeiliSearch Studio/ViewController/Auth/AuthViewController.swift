@@ -6,6 +6,7 @@
 //
 
 import Cocoa
+import CoreStore
 
 final class AuthViewController: NSViewController {
 
@@ -16,7 +17,10 @@ final class AuthViewController: NSViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    meiliLinkLabel.addGestureRecognizer(NSClickGestureRecognizer(target: self, action: #selector(onMeiliLinkClick)))
+    meiliLinkLabel.addGestureRecognizer(
+      NSClickGestureRecognizer(
+        target: self,
+        action: #selector(onMeiliLinkClick)))
   }
 
   @objc
@@ -37,12 +41,28 @@ final class AuthViewController: NSViewController {
       let safeHttpHost: String = host.contains("http") ? host : "http://\(host)"
 
       MeiliSearchClient.shared.setup(hostURL: safeHttpHost, key: masterKey) { [weak self] result in
-
+        
         self?.toggleActivityIndicator(enabled: false)
 
         switch result {
         case .success:
-          self?.showHomeViewController()
+          
+          CoreStoreDefaults.dataStack.perform(
+            asynchronous: { (transaction) -> Void in
+              let instance = transaction.create(Into<MeilisearchInstance>())
+              instance.host = safeHttpHost
+              instance.apiKey = masterKey
+            },
+            completion: { [weak self] result in
+              switch result {
+              case .success:
+                self?.showHomeViewController()
+                
+              case .failure(let error):
+                fatalError("\(error)")
+              }
+            }
+          )
 
         case .failure(let error):
           let alert = NSAlert()

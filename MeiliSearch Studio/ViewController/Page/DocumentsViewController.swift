@@ -243,22 +243,22 @@ extension DocumentsViewController: NSTableViewDelegate {
 
     let index: [String: Any] = rawDocuments[row].value as! [String: Any]
 
-    let dd = tableColumn!.headerCell.stringValue
-    let v = index[dd]
+    let headerKey: String = tableColumn!.headerCell.stringValue
+    let value = index[headerKey]
 
     let cell = NSTextField()
-    cell.identifier = NSUserInterfaceItemIdentifier(dd)
+    cell.identifier = NSUserInterfaceItemIdentifier(headerKey)
 
-    if let intValue = v as? Int {
+    if let intValue = value as? Int {
       cell.intValue = Int32(intValue)
-    } else if let floatValue = v as? Float {
+    } else if let floatValue = value as? Float {
       cell.floatValue = floatValue
-    } else if let stringValue = v as? String {
+    } else if let stringValue = value as? String {
       cell.stringValue = stringValue
-    } else if let vv = v {
-      cell.stringValue = "\(vv)"
+    } else if let safeValue = value {
+      cell.stringValue = "\(safeValue)"
     } else {
-      cell.stringValue = "\"null\""
+      cell.stringValue = "Not set"
     }
 
     return cell
