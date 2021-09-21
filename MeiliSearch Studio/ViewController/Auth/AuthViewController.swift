@@ -32,8 +32,11 @@ final class AuthViewController: NSViewController {
     self.toggleActivityIndicator(enabled: true)
 
     DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+      
+      // Handles pure IP (127.0.0.1:7700) and http/https included cases.
+      let safeHttpHost: String = host.contains("http") ? host : "http://\(host)"
 
-      MeiliSearchClient.shared.setup(hostURL: host, key: masterKey) { [weak self] result in
+      MeiliSearchClient.shared.setup(hostURL: safeHttpHost, key: masterKey) { [weak self] result in
 
         self?.toggleActivityIndicator(enabled: false)
 

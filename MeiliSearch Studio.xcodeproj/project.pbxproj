@@ -61,12 +61,12 @@
 		485AF9FF253BC3E100110584 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				485AFA00253BC3E900110584 /* Page */,
 				485AFA01253BC42700110584 /* Auth */,
 				48AE16CE2533AAB1009E5EB1 /* HomeViewController.swift */,
 				48AE16D12533AC09009E5EB1 /* MenuViewController.swift */,
 				488322C52534FFB90086A902 /* AddIndexViewController.swift */,
 				48BC8948253BE1BF00D9B59A /* JSONEditorViewController.swift */,
-				485AFA00253BC3E900110584 /* Page */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
