@@ -142,7 +142,10 @@ final class DocumentsViewController: NSViewController {
     let queue = DispatchQueue(label: "LoadDocumentsQueue")
     queue.asyncAfter(deadline: .now() + 0.5) {
 
-      MeiliSearchClient.shared.client.getDocuments(UID: UID, limit: limit) { [weak self] (result: Result<[RawDocument], Swift.Error>) in
+      MeiliSearchClient.shared.client.getDocuments(
+        UID: UID,
+        options: GetParameters(offset: 0, limit: limit)
+      ) { [weak self] (result: Result<[RawDocument], Swift.Error>) in
 
         switch result {
         case .success(let rawDocuments):

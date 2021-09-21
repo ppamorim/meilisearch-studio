@@ -5,8 +5,8 @@
         "package": "meilisearch-swift",
         "repositoryURL": "https://github.com/meilisearch/meilisearch-swift.git",
         "state": {
-          "branch": "master",
-          "revision": "47402cd72b394c6d62beac1bced27ce5da44135b",
+          "branch": "main",
+          "revision": "8cb0cceb7a92e5d5dc3f4f08fa2b3f90e76265af",
           "version": null
         }
       }

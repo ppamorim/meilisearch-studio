@@ -21,7 +21,7 @@ class MeiliSearchClient {
     queue.async { [weak self] in
       do {
         let host: String = hostURL.isEmpty ? "http://localhost:7700" : hostURL
-        self?.client = try MeiliSearch(Config(hostURL: host, apiKey: key))
+        self?.client = try MeiliSearch(host: host, apiKey: key)
         DispatchQueue.main.async {
           completion(.success(()))
         }

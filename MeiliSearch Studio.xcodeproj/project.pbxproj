@@ -416,7 +416,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/meilisearch/meilisearch-swift.git";
 			requirement = {
-				branch = master;
+				branch = main;
 				kind = branch;
 			};
 		};
