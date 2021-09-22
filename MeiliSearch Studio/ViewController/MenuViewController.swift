@@ -13,19 +13,30 @@ struct Page {
   let viewControllerName: String
 }
 
-final class MenuViewController: NSViewController {
+enum ConnectivityStatus {
+  case connecting, disconnected, connected
+}
+
+protocol MenuViewControllerDelegate: AnyObject {
+  func updateConnectionStatus(_ status: ConnectivityStatus)
+}
+
+final class MenuViewController: NSViewController, MenuViewControllerDelegate {
 
   private weak var homeViewControllerDelegate: HomeViewControllerDelegate?
 
   fileprivate let items: [Page] = [
-    Page(title: "Indexes", icon: "staroflife", viewControllerName: String(describing: IndexesViewController.self)),
-    Page(title: "Documents", icon: "doc.text.magnifyingglass", viewControllerName: String(describing: DocumentsViewController.self)),
-    Page(title: "Search", icon: "", viewControllerName: String(describing: SearchViewController.self)),
-    Page(title: "Settings", icon: "", viewControllerName: String(describing: SettingsViewController.self))
+    Page(title: "Home", icon: "house", viewControllerName: ""),
+    Page(title: "Indexes", icon: "doc.on.doc", viewControllerName: String(describing: IndexesViewController.self)),
+    Page(title: "Documents", icon: "doc.plaintext", viewControllerName: String(describing: DocumentsViewController.self)),
+    Page(title: "Search", icon: "doc.text.magnifyingglass", viewControllerName: String(describing: SearchViewController.self)),
+    Page(title: "Settings", icon: "gearshape", viewControllerName: String(describing: SettingsViewController.self))
   ]
 
   @IBOutlet weak var tableView: NSTableView!
-
+  @IBOutlet weak var connectionStatusLabel: NSTextField!
+  @IBOutlet weak var disconnectButton: NSButton!
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     homeViewControllerDelegate = self.parent as? HomeViewControllerDelegate
@@ -33,11 +44,27 @@ final class MenuViewController: NSViewController {
     tableView.dataSource = self
     tableView.target = self
     tableView.action = #selector(tableViewClick(_:))
+    tableView.selectRowIndexes(IndexSet(integer: 0), byExtendingSelection: false)
   }
 
   @objc
   private func tableViewClick(_ sender:AnyObject) {
     homeViewControllerDelegate?.openPage(page: items[tableView.selectedRow])
+  }
+  
+  @IBAction func disconnectButtonTouchUpInside(_ sender: Any) {
+    homeViewControllerDelegate?.disconnect()
+  }
+  
+  func updateConnectionStatus(_ status: ConnectivityStatus) {
+    switch status {
+    case ConnectivityStatus.disconnected:
+      connectionStatusLabel.stringValue = "Status: Disconnected"
+    case ConnectivityStatus.connected:
+      connectionStatusLabel.stringValue = "Status: Connected"
+    case ConnectivityStatus.connecting:
+      connectionStatusLabel.stringValue = "Status: Connecting"
+    }
   }
 
 }

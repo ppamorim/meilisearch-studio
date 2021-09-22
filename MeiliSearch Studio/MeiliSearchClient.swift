@@ -32,5 +32,9 @@ class MeiliSearchClient {
       }
     }
   }
+  
+  func invalidate() {
+    self.client = nil
+  }
 
 }

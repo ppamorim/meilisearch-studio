@@ -19,6 +19,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   var addIndexViewControllerDelegate: AddIndexViewControllerDelegate?
 
   func applicationDidFinishLaunching(_ aNotification: Notification) {
+    
     do {
       try dataStack.addStorageAndWait()
       CoreStoreDefaults.dataStack = self.dataStack
@@ -27,10 +28,18 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     do {
+      
       let count = try dataStack.fetchCount(From<MeilisearchInstance>())
-      let storyboard: NSStoryboard = NSStoryboard(name: "Main", bundle: Bundle.main)
-      let identifier: String = count == 0 ? "AuthViewController" : "HomeViewController"
+      
+      let storyboard: NSStoryboard = NSStoryboard(
+        name: "Main", bundle: Bundle.main)
+      
+      let identifier: String = count == 0
+        ? "AuthViewController"
+        : "HomeViewController"
+      
       let windowController = storyboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(identifier)) as! NSWindowController
+      
       present(windowController: windowController)
     } catch {
       print(error)
