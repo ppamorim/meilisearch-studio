@@ -4,6 +4,7 @@
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="19162"/>
         <capability name="NSView safe area layout guides" minToolsVersion="12.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -815,8 +816,8 @@
                                 <rect key="frame" x="0.0" y="348" width="620" height="44"/>
                                 <subviews>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="g6B-Wy-Ln3">
-                                        <rect key="frame" x="15" y="10" width="57" height="23"/>
-                                        <buttonCell key="cell" type="roundTextured" title="Add" bezelStyle="texturedRounded" image="NSAddTemplate" imagePosition="leading" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="QLW-Jk-gRG">
+                                        <rect key="frame" x="9" y="5" width="75" height="32"/>
+                                        <buttonCell key="cell" type="push" title="Add" bezelStyle="rounded" image="plus" catalog="system" imagePosition="leading" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="QLW-Jk-gRG">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
@@ -825,8 +826,8 @@
                                         </connections>
                                     </button>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="9P7-LY-zhD">
-                                        <rect key="frame" x="79" y="10" width="77" height="23"/>
-                                        <buttonCell key="cell" type="roundTextured" title="Update" bezelStyle="texturedRounded" image="NSMenuOnStateTemplate" imagePosition="left" alignment="center" lineBreakMode="truncatingTail" enabled="NO" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="5Cq-Le-wSA">
+                                        <rect key="frame" x="79" y="5" width="94" height="32"/>
+                                        <buttonCell key="cell" type="push" title="Update" bezelStyle="rounded" image="bolt" catalog="system" imagePosition="leading" alignment="center" lineBreakMode="truncatingTail" enabled="NO" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="5Cq-Le-wSA">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
@@ -835,8 +836,8 @@
                                         </connections>
                                     </button>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="yIo-Up-F2J">
-                                        <rect key="frame" x="163" y="10" width="73" height="23"/>
-                                        <buttonCell key="cell" type="roundTextured" title="Delete" bezelStyle="texturedRounded" image="NSStopProgressFreestandingTemplate" imagePosition="left" alignment="center" lineBreakMode="truncatingTail" enabled="NO" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="zUV-am-i6t">
+                                        <rect key="frame" x="168" y="5" width="91" height="32"/>
+                                        <buttonCell key="cell" type="push" title="Delete" bezelStyle="rounded" image="trash" catalog="system" imagePosition="leading" alignment="center" lineBreakMode="truncatingTail" enabled="NO" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="zUV-am-i6t">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
@@ -1118,12 +1119,13 @@
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="d5B-kj-SFT">
                                 <rect key="frame" x="0.0" y="348" width="620" height="44"/>
                                 <subviews>
-                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="vNW-Gc-4Hb">
-                                        <rect key="frame" x="15" y="10" width="57" height="23"/>
-                                        <buttonCell key="cell" type="roundTextured" title="Add" bezelStyle="texturedRounded" image="NSAddTemplate" imagePosition="left" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="mxh-wL-kcb">
+                                    <button verticalHuggingPriority="750" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vNW-Gc-4Hb">
+                                        <rect key="frame" x="9" y="5" width="75" height="32"/>
+                                        <buttonCell key="cell" type="push" title="Add" bezelStyle="rounded" image="plus" catalog="system" imagePosition="leading" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="mxh-wL-kcb">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
+                                        <color key="contentTintColor" name="AccentColor"/>
                                         <connections>
                                             <action selector="onAddClick:" target="OnC-gW-prc" id="cdk-Zh-lXG"/>
                                         </connections>
@@ -1145,7 +1147,7 @@
                                         <rect key="frame" x="550" y="14" width="16" height="16"/>
                                     </progressIndicator>
                                     <comboBox verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="oyl-Sa-hB3">
-                                        <rect key="frame" x="80" y="9" width="163" height="25"/>
+                                        <rect key="frame" x="86" y="9" width="163" height="25"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="160" id="sks-Dx-7Ez"/>
                                         </constraints>
@@ -1156,7 +1158,7 @@
                                         </comboBoxCell>
                                     </comboBox>
                                     <comboBox verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SzO-66-yRe">
-                                        <rect key="frame" x="292" y="9" width="63" height="25"/>
+                                        <rect key="frame" x="298" y="9" width="63" height="25"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="60" id="Z8G-yL-KOm"/>
                                         </constraints>
@@ -1172,7 +1174,7 @@
                                         </comboBoxCell>
                                     </comboBox>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Q8s-Sh-Ura">
-                                        <rect key="frame" x="248" y="14" width="38" height="16"/>
+                                        <rect key="frame" x="254" y="14" width="38" height="16"/>
                                         <textFieldCell key="cell" lineBreakMode="clipping" title="Limit:" id="lIh-t4-TYf">
                                             <font key="font" metaFont="system"/>
                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -1180,7 +1182,7 @@
                                         </textFieldCell>
                                     </textField>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mpD-9U-Ik2">
-                                        <rect key="frame" x="358" y="14" width="39" height="16"/>
+                                        <rect key="frame" x="364" y="14" width="39" height="16"/>
                                         <textFieldCell key="cell" lineBreakMode="clipping" title="Page:" id="U1K-9t-4SD">
                                             <font key="font" metaFont="system"/>
                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -1188,14 +1190,14 @@
                                         </textFieldCell>
                                     </textField>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="9Zo-8n-r2i">
-                                        <rect key="frame" x="402" y="10" width="22" height="23"/>
+                                        <rect key="frame" x="408" y="10" width="22" height="23"/>
                                         <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="NSGoBackTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="2m4-1F-k0m">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
                                     </button>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="03q-Kb-mPk">
-                                        <rect key="frame" x="425" y="14" width="13" height="16"/>
+                                        <rect key="frame" x="431" y="14" width="13" height="16"/>
                                         <textFieldCell key="cell" lineBreakMode="clipping" title="0" id="pSb-E0-VGe">
                                             <font key="font" metaFont="system"/>
                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -1203,7 +1205,7 @@
                                         </textFieldCell>
                                     </textField>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Mku-Wg-bcJ">
-                                        <rect key="frame" x="439" y="10" width="22" height="23"/>
+                                        <rect key="frame" x="445" y="10" width="22" height="23"/>
                                         <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="NSGoForwardTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="wn2-SU-zj3">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
@@ -2035,11 +2037,14 @@
     <resources>
         <image name="AppIcon" width="128" height="128"/>
         <image name="NSActionTemplate" width="15" height="15"/>
-        <image name="NSAddTemplate" width="14" height="13"/>
         <image name="NSGoBackTemplate" width="10" height="14"/>
         <image name="NSGoForwardTemplate" width="10" height="14"/>
-        <image name="NSMenuOnStateTemplate" width="14" height="13"/>
         <image name="NSRefreshFreestandingTemplate" width="15" height="15"/>
-        <image name="NSStopProgressFreestandingTemplate" width="15" height="15"/>
+        <image name="bolt" catalog="system" width="13" height="17"/>
+        <image name="plus" catalog="system" width="14" height="13"/>
+        <image name="trash" catalog="system" width="15" height="17"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>
