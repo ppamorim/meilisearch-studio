@@ -1,13 +1,9 @@
 <p align="center">
   <img src="https://github.com/meilisearch/meilisearch/blob/main/assets/logo.svg" alt="Meilisearch" width="200" height="200" />
-</p>
 
 <h1 align="center">Meilisearch Studio</h1>
-
-##### The project is on alpha version, please be patient and report any bug found.
-
-<p align="center">
-<img src="assets/screenshot_1.png" alt="Meilisearch" width="450" />
+<h4 align="center">The project is on alpha version, please be patient and report any bug found.</h4>
+<img src="assets/screenshot_1.png" alt="Meilisearch" width="600" />
 </p>
 
 ## Getting started
