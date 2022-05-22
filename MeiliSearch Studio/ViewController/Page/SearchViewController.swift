@@ -74,14 +74,14 @@ final class SearchViewController: NSViewController {
 
     let query: String = searchField.stringValue
 
-    let UID = indexes[index].UID
+    let uid = indexes[index].uid
 
     let queue = DispatchQueue(label: "LoadDocumentsQueue")
     queue.asyncAfter(deadline: .now() + 0.5) {
 
       let params = SearchParameters.query(query)
 
-      MeiliSearchClient.shared.client.search(UID: UID, params) { [weak self] (result: Result<SearchResult<RawDocument>, Swift.Error>) in
+      MeiliSearchClient.shared.client.index(uid).search(params) { [weak self] (result: Result<SearchResult<RawDocument>, Swift.Error>) in
 
         switch result {
         case .success(let searchResult):
@@ -163,7 +163,7 @@ extension SearchViewController: NSTableViewDelegate {
     cell.identifier = NSUserInterfaceItemIdentifier(dd)
 
     if let intValue = v as? Int {
-      cell.intValue = Int32(intValue)
+      cell.integerValue = intValue
       cell.alphaValue = 1.0
     } else if let floatValue = v as? Float {
       cell.floatValue = floatValue
@@ -222,7 +222,7 @@ extension SearchViewController: NSComboBoxDataSource {
   }
 
   func comboBox(_ comboBox: NSComboBox, objectValueForItemAt index: Int) -> Any? {
-    indexes[index].UID
+    indexes[index].uid
   }
 
 }

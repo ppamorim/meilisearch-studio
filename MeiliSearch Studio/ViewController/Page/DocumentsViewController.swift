@@ -98,7 +98,7 @@ final class DocumentsViewController: NSViewController {
     }
     let limit = Int(limitComboBox.intValue)
     if limit == 10 || limit == 100 || limit == 1000 {
-      loadDocumentsAsync(UID: indexes[index].UID, limit: limit)
+      loadDocumentsAsync(uid: indexes[index].uid, limit: limit)
     }
 
   }
@@ -133,7 +133,7 @@ final class DocumentsViewController: NSViewController {
 
   }
 
-  private func loadDocumentsAsync(UID: String, limit: Int) {
+  private func loadDocumentsAsync(uid: String, limit: Int) {
 
     self.progressIndicator.isHidden = false
     self.progressIndicator.startAnimation(nil)
@@ -142,8 +142,7 @@ final class DocumentsViewController: NSViewController {
     let queue = DispatchQueue(label: "LoadDocumentsQueue")
     queue.asyncAfter(deadline: .now() + 0.5) {
 
-      MeiliSearchClient.shared.client.getDocuments(
-        UID: UID,
+      MeiliSearchClient.shared.client.index(uid).getDocuments(
         options: GetParameters(offset: 0, limit: limit)
       ) { [weak self] (result: Result<[RawDocument], Swift.Error>) in
 
@@ -176,7 +175,7 @@ final class DocumentsViewController: NSViewController {
 
         let data: NSData = try NSData(contentsOf: url)
 
-        MeiliSearchClient.shared.client.addDocuments(UID: index.UID, documents: data as Data, primaryKey: index.primaryKey) { result in
+        MeiliSearchClient.shared.client.index(index.uid).addDocuments(documents: data as Data, primaryKey: index.primaryKey) { result in
 
           switch result {
           case .success(let update):
@@ -250,7 +249,7 @@ extension DocumentsViewController: NSTableViewDelegate {
     cell.identifier = NSUserInterfaceItemIdentifier(headerKey)
 
     if let intValue = value as? Int {
-      cell.intValue = Int32(intValue)
+      cell.integerValue = intValue
     } else if let floatValue = value as? Float {
       cell.floatValue = floatValue
     } else if let stringValue = value as? String {
@@ -278,7 +277,7 @@ extension DocumentsViewController: NSComboBoxDelegate {
 
   func comboBoxSelectionDidChange(_ notification: Notification) {
     let index: Int = indexesComboBox.indexOfSelectedItem
-    loadDocumentsAsync(UID: indexes[index].UID, limit: 10)
+    loadDocumentsAsync(uid: indexes[index].uid, limit: 10)
   }
 
 }
@@ -290,7 +289,7 @@ extension DocumentsViewController: NSComboBoxDataSource {
   }
 
   func comboBox(_ comboBox: NSComboBox, objectValueForItemAt index: Int) -> Any? {
-    indexes[index].UID
+    indexes[index].uid
   }
 
 }

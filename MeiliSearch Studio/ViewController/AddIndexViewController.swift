@@ -26,27 +26,23 @@ final class AddIndexViewController: NSViewController {
   }
 
   @IBAction func onCreateButtonClick(_ sender: Any) {
-    createButton.isEnabled = false
-
-    let UID: String = uidTextField.stringValue
-
-    if UID.isEmpty {
+    let uid: String = uidTextField.stringValue
+    if uid.isEmpty {
       return
     }
-
-    createIndexAsync(UID) { [weak self] in
+    createButton.isEnabled = false
+    createIndexAsync(uid) { [weak self] in
       self?.delegate?.onIndexAdded()
       self?.view.window?.close()
     }
-
   }
 
-  private func createIndexAsync(_ UID: String, _ completion: @escaping () -> Void) {
+  private func createIndexAsync(_ uid: String, _ completion: @escaping () -> Void) {
 
     let queue = DispatchQueue(label: "CreateIndexQueue")
     queue.async {
 
-      MeiliSearchClient.shared.client.createIndex(UID: UID) { result in
+      MeiliSearchClient.shared.client.createIndex(uid: uid) { result in
 
         switch result {
         case .success:
