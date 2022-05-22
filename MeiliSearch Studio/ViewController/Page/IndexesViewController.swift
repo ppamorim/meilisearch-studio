@@ -81,15 +81,15 @@ final class IndexesViewController: NSViewController {
       return
     }
 
-    let UID: String = indexes[index].UID
+    let uid: String = indexes[index].uid
 
     let delete = dialogCustomCancel(
-      question: "Are you sure to delete the Index \"\(UID)\"?",
+      question: "Are you sure to delete the Index \"\(uid)\"?",
       text: "This index will be deleted and you can't undo this action.",
       firstButtonText: "Delete")
 
     if delete {
-      deleteIndexAsync(UID)
+      deleteIndexAsync(uid)
     }
   }
 
@@ -134,7 +134,7 @@ final class IndexesViewController: NSViewController {
     let queue = DispatchQueue(label: "DeleteIndexQueue")
     queue.async {
 
-      MeiliSearchClient.shared.client.deleteIndex(UID: UID) { [weak self] result in
+      MeiliSearchClient.shared.client.deleteIndex(UID) { [weak self] result in
 
         switch result {
         case .success:
@@ -182,8 +182,8 @@ final class IndexesViewController: NSViewController {
 extension IndexesViewController: NSSearchFieldDelegate {
 
   func controlTextDidChange(_ obj: Notification) {
-    let UID: String = searchField.stringValue.trimmingCharacters(in: .whitespacesAndNewlines)
-    self.indexes = originalIndexes.filter { (index: Index) in index.UID.contains(UID) }
+    let uid: String = searchField.stringValue.trimmingCharacters(in: .whitespacesAndNewlines)
+    self.indexes = originalIndexes.filter { (index: Index) in index.uid.contains(uid) }
     self.updateTableViewIfNeeded()
   }
 
@@ -206,7 +206,7 @@ extension IndexesViewController: NSTableViewDelegate {
     let index = indexes[row]
 
     if tableColumn == tableView.tableColumns[0] {
-      text = index.UID
+      text = index.uid
       cellIdentifier = CellIdentifiers.IndexNameCell
     } else if tableColumn == tableView.tableColumns[1] {
       text = index.primaryKey ?? "\"null\""

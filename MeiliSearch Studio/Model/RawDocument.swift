@@ -13,7 +13,7 @@ public struct RawDocument: Codable, Equatable {
     return false
   }
 
-  public var value: Any
+  public var value: Any?
 
   private struct CodingKeys: CodingKey {
     var stringValue: String
@@ -48,7 +48,8 @@ public struct RawDocument: Codable, Equatable {
       } else if let stringVal = try? container.decode(String.self) {
         value = stringVal
       } else {
-        throw DecodingError.dataCorruptedError(in: container, debugDescription: "the container contains nothing serialisable")
+        value = nil
+//        throw DecodingError.dataCorruptedError(in: container, debugDescription: "the container contains nothing serialisable")
       }
     } else {
       throw DecodingError.dataCorrupted(DecodingError.Context(codingPath: decoder.codingPath, debugDescription: "Could not serialise"))

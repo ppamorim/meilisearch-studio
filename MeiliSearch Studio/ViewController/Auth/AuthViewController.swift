@@ -30,7 +30,10 @@ final class AuthViewController: NSViewController {
 
   @IBAction func onSignInClick(_ sender: Any) {
 
-    let host: String = hostTextField.stringValue
+    var host: String = hostTextField.stringValue
+    if host.isEmpty {
+      host = "localhost:7700"
+    }
     let masterKey: String = masterKeyTextField.stringValue
 
     self.toggleActivityIndicator(enabled: true)
@@ -89,7 +92,9 @@ final class AuthViewController: NSViewController {
 
   private func showHomeViewController() {
     let storyboard = NSStoryboard(name: "Main", bundle: Bundle.main)
-    let windowController = storyboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier("HomeViewController")) as! NSWindowController
+    let windowController = storyboard.instantiateController(
+      withIdentifier: NSStoryboard.SceneIdentifier("HomeViewController")
+    ) as! NSWindowController
     let appDelegate = NSApplication.shared.delegate as! AppDelegate
     appDelegate.present(windowController: windowController)
     self.view.window?.close()

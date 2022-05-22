@@ -1,25 +1,23 @@
 {
-  "object": {
-    "pins": [
-      {
-        "package": "CoreStore",
-        "repositoryURL": "https://github.com/JohnEstropia/CoreStore",
-        "state": {
-          "branch": null,
-          "revision": "dda69389eb95bc992141b15a11d9a4fbaf26223e",
-          "version": "8.0.1"
-        }
-      },
-      {
-        "package": "meilisearch-swift",
-        "repositoryURL": "https://github.com/meilisearch/meilisearch-swift.git",
-        "state": {
-          "branch": "main",
-          "revision": "8cb0cceb7a92e5d5dc3f4f08fa2b3f90e76265af",
-          "version": null
-        }
+  "pins" : [
+    {
+      "identity" : "corestore",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/JohnEstropia/CoreStore",
+      "state" : {
+        "branch" : "develop",
+        "revision" : "3317867a2f9709b8e3384488be8fffdae740733c"
       }
-    ]
-  },
-  "version": 1
+    },
+    {
+      "identity" : "meilisearch-swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/meilisearch/meilisearch-swift.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "d6e94667e715c6bd30708d8da1a41a67c2cdc971"
+      }
+    }
+  ],
+  "version" : 2
 }
